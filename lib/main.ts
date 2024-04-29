@@ -1,3 +1,2 @@
-export { Button } from './components/Button';
-
-export const hello = (name: string) => `Hello ${name}`;
+export * from './global.scss'
+export { Pill } from './components/Pill';
