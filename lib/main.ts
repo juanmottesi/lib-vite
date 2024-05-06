@@ -1,2 +1,2 @@
-export * from './global.scss'
+export * from './global.scss';
 export { Pill } from './components/Pill';

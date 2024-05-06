@@ -4,13 +4,18 @@ import dts from 'vite-plugin-dts';
 
 import { glob } from 'glob';
 import { extname, relative, resolve } from 'path';
-import { fileURLToPath } from 'node:url'
+import { fileURLToPath } from 'node:url';
 
 export default defineConfig({
   test: {
     environment: 'happy-dom',
     coverage: {
-      exclude: ['lib/**/*.stories.tsx', '.storybook', 'lib/main.ts', '.eslintrc.cjs'],
+      exclude: [
+        'lib/**/*.stories.tsx',
+        '.storybook',
+        'lib/main.ts',
+        '.eslintrc.cjs',
+      ],
     },
   },
   plugins: [
@@ -27,16 +32,14 @@ export default defineConfig({
     rollupOptions: {
       external: ['react', 'react/jsx-runtime'],
       input: Object.fromEntries(
-        // https://rollupjs.org/configuration-options/#input
-        glob.sync(['lib/**/*.{ts,tsx}', 'lib/theme/*.css'], { ignore: ['lib/**/*.stories.{ts,tsx}', 'lib/**/*.spec.{ts,tsx}'] }).map(file => [
-          // 1. The name of the entry point
-          // lib/nested/foo.js becomes nested/foo
+        glob.sync(
+          ['lib/**/*.{ts,tsx}', 'lib/theme/*.css'],
+          { ignore: ['lib/**/*.stories.{ts,tsx}', 'lib/**/*.spec.{ts,tsx}'] },
+        ).map(file => [
           relative(
             'lib',
             file.slice(0, file.length - extname(file).length),
           ),
-          // 2. The absolute path to the entry file
-          // lib/nested/foo.ts becomes /project/lib/nested/foo.ts
           fileURLToPath(new URL(file, import.meta.url)),
         ]),
       ),

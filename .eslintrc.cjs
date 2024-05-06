@@ -10,6 +10,11 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-    'comma-dangle': ["error", "always-multiline"]
+    'comma-dangle': ["error", "always-multiline"],
+    'max-len': ["error", { "code": 150 }],
+    'semi-style': ["error", "last"],
+    'semi': ["error", "always"],
+    'brace-style': "error",
+    'comma-spacing': ["error", { "before": false, "after": true }]
   },
 }

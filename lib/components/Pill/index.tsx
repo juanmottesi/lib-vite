@@ -1,4 +1,14 @@
-type PillVariant = 'default' | 'active' | 'success' | 'warning' | 'error' | 'alternative1' | 'alternative2' | 'alternative3' | 'alternative4' | 'alternative5' | 'alternative6';
+type PillVariant = 'default'
+  | 'active'
+  | 'success' 
+  | 'warning' 
+  | 'error' 
+  | 'alternative1' 
+  | 'alternative2' 
+  | 'alternative3' 
+  | 'alternative4' 
+  | 'alternative5' 
+  | 'alternative6';
 
 type PillProps = {
   variant: PillVariant
