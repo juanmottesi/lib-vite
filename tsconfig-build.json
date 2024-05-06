@@ -3,6 +3,8 @@
   "include": [ "lib" ],
   "exclude": [
     "lib/**/*.stories.ts",
-    "lib/**/*.stories.tsx"
+    "lib/**/*.stories.tsx",
+    "lib/**/*.spec.ts",
+    "lib/**/*.spec.tsx",
   ],
 }
