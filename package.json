@@ -1,7 +1,6 @@
 {
-  "name": "lib-gin-kit",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@ppi/lib-gin-kit",
+  "version": "0.0.1",
   "type": "module",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -16,7 +15,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "vitest run",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "prepublish": "bun run build"
   },
   "peerDependencies": {
     "react": "^18.2.0",
