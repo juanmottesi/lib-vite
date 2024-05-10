@@ -2,9 +2,12 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vitest/config';
 import dts from 'vite-plugin-dts';
 
-import { glob } from 'glob';
+import pkg from 'glob';
+
 import { extname, relative, resolve } from 'path';
 import { fileURLToPath } from 'node:url';
+
+const { glob } = pkg;
 
 export default defineConfig({
   test: {
@@ -33,7 +36,7 @@ export default defineConfig({
       external: ['react', 'react/jsx-runtime'],
       input: Object.fromEntries(
         glob.sync(
-          ['lib/**/*.{ts,tsx}', 'lib/theme/*.css'],
+          'lib/**/*.{ts,tsx,css}',
           { ignore: ['lib/**/*.stories.{ts,tsx}', 'lib/**/*.spec.{ts,tsx}'] },
         ).map(file => [
           relative(
