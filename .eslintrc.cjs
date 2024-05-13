@@ -15,6 +15,8 @@ module.exports = {
     'semi-style': ["error", "last"],
     'semi': ["error", "always"],
     'brace-style': "error",
-    'comma-spacing': ["error", { "before": false, "after": true }]
+    'comma-spacing': ["error", { "before": false, "after": true }],
+    'jsx-quotes': ["error", "prefer-double"],
+    'quotes': ["error", "single"]
   },
 }

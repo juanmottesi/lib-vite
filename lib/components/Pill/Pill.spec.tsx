@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/experimental-ct-react';
 
 import { checkIfContiansClass } from '../../../test/utils';
 
-import { Pill } from "./index";
+import { Pill } from './index';
 
 test('Should render component', async ({ mount }) => {
   const component = await mount(<Pill variant="default">Hola</Pill>);
