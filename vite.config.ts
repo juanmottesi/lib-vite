@@ -1,26 +1,13 @@
-import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vitest/config';
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
 import dts from 'vite-plugin-dts';
 
-import pkg from 'glob';
+import { glob } from 'glob';
 
 import { extname, relative, resolve } from 'path';
 import { fileURLToPath } from 'node:url';
 
-const { glob } = pkg;
-
 export default defineConfig({
-  test: {
-    environment: 'happy-dom',
-    coverage: {
-      exclude: [
-        'lib/**/*.stories.tsx',
-        '.storybook',
-        'lib/main.ts',
-        '.eslintrc.cjs',
-      ],
-    },
-  },
   plugins: [
     react(),
     dts({ include: ['lib'] }),
