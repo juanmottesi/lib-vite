@@ -6,8 +6,14 @@ import { checkIfContiansClass } from '../../../test/utils';
 import { Button } from './index';
 
 test('Should render component', async ({ mount }) => {
-  const component = await mount(<Button id="action" variant="fill-primary">Default</Button>);
+  const component = await mount(<Button id="action">Default</Button>);
   await expect(component).toContainText('Default');
+});
+
+test('Should contain className same as default variant', async ({ mount }) => {
+  const component = await mount(<Button id="action">Default</Button>);
+  await checkIfContiansClass(component, 'button');
+  await checkIfContiansClass(component, 'fill-primary');
 });
 
 test('Should contain className same as variant', async ({ mount }) => {
@@ -30,7 +36,7 @@ test('Should execute onClick', async ({ mount }) => {
   let clicked = false;
   const component = await mount(<Button
     id="action"
-    variant="fill-primary"
+  
     onClick={() => {
       clicked = true;
     }}

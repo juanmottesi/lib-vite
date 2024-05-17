@@ -7,14 +7,14 @@ type ButtonVariantType = 'fill-primary' | 'fill-secondary' |
 type ButtonProps = {
   id: string;
   size?: SizingType;
-  variant: ButtonVariantType;
+  variant?: ButtonVariantType;
   isChip?: boolean
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button = ({
   id,
   children,
-  variant,
+  variant = 'fill-primary',
   size = 'md',
   className = '',
   type = 'button',

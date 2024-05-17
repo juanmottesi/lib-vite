@@ -24,7 +24,6 @@ const meta = {
   args: {
     id: 'action',
     children: 'Default',
-    variant: 'fill-primary',
     size: 'md',
     onClick: fn(),
   },
