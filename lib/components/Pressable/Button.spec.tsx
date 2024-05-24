@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/experimental-ct-react';
 
 import { checkIfContiansClass } from '../../../test/utils';
 
-import { Button } from './index';
+import { Button } from './Button';
 
 test('Should render component', async ({ mount }) => {
   const component = await mount(<Button id="action">Default</Button>);
@@ -12,13 +12,13 @@ test('Should render component', async ({ mount }) => {
 
 test('Should contain className same as default variant', async ({ mount }) => {
   const component = await mount(<Button id="action">Default</Button>);
-  await checkIfContiansClass(component, 'button');
+  await checkIfContiansClass(component, 'pressable');
   await checkIfContiansClass(component, 'fill-primary');
 });
 
 test('Should contain className same as variant', async ({ mount }) => {
   const component = await mount(<Button id="action" variant="fill-secondary">Default</Button>);
-  await checkIfContiansClass(component, 'button');
+  await checkIfContiansClass(component, 'pressable');
   await checkIfContiansClass(component, 'fill-secondary');
 });
 
