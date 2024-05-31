@@ -4,7 +4,7 @@ import { fn } from '@storybook/test';
 import { ChoiceChip } from './ChoiceChip';
 
 const meta = {
-  title: 'Components/ChoiceChip',
+  title: 'Components/Pressable/ChoiceChip',
   component: ChoiceChip,
   parameters: {
     layout: 'centered',

@@ -4,7 +4,7 @@ import { fn } from '@storybook/test';
 import { FilterChip } from './FilterChip';
 
 const meta = {
-  title: 'Components/FilterChip',
+  title: 'Components/Pressable/FilterChip',
   component: FilterChip,
   parameters: {
     layout: 'centered',
