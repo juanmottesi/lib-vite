@@ -15,7 +15,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "playwright test -c playwright-ct.config.ts",
-    "coverage": "bun run test && playwright show-report",
+    "test:report": "bun run test && playwright show-report",
     "prepublish": "bun run build"
   },
   "peerDependencies": {

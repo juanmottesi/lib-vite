@@ -17,18 +17,18 @@ test('Should contain className same as default variant', async ({ mount }) => {
 });
 
 test('Should contain className same as variant', async ({ mount }) => {
-  const component = await mount(<Button id="action" variant="fill-secondary">Default</Button>);
+  const component = await mount(<Button id="action" variant="flat-neutral">Default</Button>);
   await checkIfContiansClass(component, 'pressable');
-  await checkIfContiansClass(component, 'fill-secondary');
+  await checkIfContiansClass(component, 'flat-neutral');
 });
 
 test('Should contain default size', async ({ mount }) => {
-  const component = await mount(<Button id="action" variant="fill-secondary">Default</Button>);
+  const component = await mount(<Button id="action" variant="flat-neutral">Default</Button>);
   await checkIfContiansClass(component, 'md');
 });
 
 test('Should contain custom size (lg)', async ({ mount }) => {
-  const component = await mount(<Button id="action" size="lg" variant="fill-secondary">Default</Button>);
+  const component = await mount(<Button id="action" size="lg" variant="flat-neutral">Default</Button>);
   await checkIfContiansClass(component, 'lg');
 });
 

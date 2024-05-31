@@ -5,27 +5,15 @@
 
   &.xs,&.sm {
     padding: 0.3125rem;
-    &.chip {
-      border-radius: 18px;
-    }
   }
   &.md {
     padding: 0.4375rem;
-    &.chip {
-      border-radius: 18px;
-    }
   }
   &.lg {
     padding: 0.6875rem;
-    &.chip {
-      border-radius: 22px;
-    }
   }
   &.xl {
     padding: 0.9375rem;
-    &.chip {
-      border-radius: 28px;
-    }
   }
 
   &.fill {
@@ -34,7 +22,7 @@
     }
     &-primary {
       background-color: var(--primary-500);
-      color: var(--neutral-0);
+      color: var(--font-high-contrast);
       border-color: var(--primary-500);
       
       &:hover {
@@ -42,26 +30,8 @@
         border-color: var(--primary-550);
       }
       &:disabled {
-        background-color: var(--neutral-600);
-        border-color: var(--neutral-600);
-      }
-      &:focus {
-        outline: 3px solid var(--primary-200);
-      }
-    }
-    &-secondary {
-      background-color: var(--neutral-0);
-      color: var(--neutral-950);
-      border-color: var(--neutral-0);
-      
-      &:hover {
-        background-color: var(--primary-50);
-        border-color: var(--primary-50);
-      }
-      &:disabled {
-        background-color: var(--neutral-150);
-        border-color: var(--neutral-600);
-        color: var(--neutral-600);
+        background-color: var(--disabled-600);
+        border-color: var(--disabled-600);
       }
       &:focus {
         outline: 3px solid var(--primary-200);
@@ -81,23 +51,23 @@
         background-color: var(--primary-50);
       }
       &:disabled {
-        color: var(--neutral-600);
-        border-color: var(--neutral-600);
+        color: var(--disabled-600);
+        border-color: var(--disabled-600);
       }
       &:focus {
         outline: 3px solid var(--primary-200);
       }
     }
-    &-secondary {
-      color: var(--neutral-950);
+    &-neutral {
+      color: var(--font);
       border-color: var(--neutral-500);
 
       &:hover {
         background-color: var(--primary-50);
       }
       &:disabled {
-        color: var(--neutral-600);
-        border-color: var(--neutral-600);
+        color: var(--disabled-600);
+        border-color: var(--disabled-600);
       }
       &:focus {
         outline: 3px solid var(--primary-200);
@@ -118,27 +88,26 @@
         background-color: var(--primary-50);
       }
       &:disabled {
-        color: var(--neutral-600);
+        color: var(--disabled-600);
       }
       &:focus {
         outline: 3px solid var(--primary-200);
       }
     }
-    &-secondary {
-      color: var(--neutral-950);
+    &-neutral {
+      color: var(--font);
 
       &:hover {
         background-color: var(--primary-50);
       }
       &:disabled {
-        color: var(--neutral-600);
+        color: var(--disabled-600);
       }
       &:focus {
         outline: 3px solid var(--primary-200);
       }
     }
   }
-
   &.link {
     border: none;
     text-decoration: underline;
@@ -156,7 +125,7 @@
       outline: 3px solid var(--primary-200);
     }
 
-    &-secondary {
+    &-plain {
       text-decoration: none;
     }
 

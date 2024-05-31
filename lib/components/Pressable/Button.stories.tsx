@@ -20,6 +20,7 @@ const meta = {
     type: { control: 'select', options: ['button', 'submit', 'reset'] },
     disabled: { control: 'boolean' },
     onClick: { action: 'clicked' },
+    className: { control: 'text' },
   },
   args: {
     id: 'action',
@@ -33,9 +34,3 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
-
-export const Active: Story = {
-  args: {
-    variant: 'fill-secondary',
-  },
-};
