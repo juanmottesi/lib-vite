@@ -4,16 +4,32 @@
   cursor: pointer;
 
   &.xs,&.sm {
-    padding: 0.3125rem;
+    padding: 0.125rem 0.3125rem;
+
+    &.choice-chip {
+      border-radius: 18px;
+    }
   }
   &.md {
-    padding: 0.4375rem;
+    padding: 0.3125rem 0.4375rem;
+
+    &.choice-chip {
+      border-radius: 18px;
+    }
   }
   &.lg {
-    padding: 0.6875rem;
+    padding: 0.5rem 0.6875rem;
+
+    &.choice-chip {
+      border-radius: 24px;
+    }
   }
   &.xl {
     padding: 0.9375rem;
+
+    &.choice-chip {
+      border-radius: 28px;
+    }
   }
 
   &.fill {
@@ -25,13 +41,14 @@
       color: var(--font-high-contrast);
       border-color: var(--primary-500);
       
-      &:hover {
+      &:hover:not(:disabled) {
         background-color: var(--primary-550);
         border-color: var(--primary-550);
       }
       &:disabled {
         background-color: var(--disabled-600);
         border-color: var(--disabled-600);
+        cursor: not-allowed;
       }
       &:focus {
         outline: 3px solid var(--primary-200);
@@ -47,12 +64,13 @@
       color: var(--primary-500);
       border-color: var(--primary-500);
 
-      &:hover {
+      &:hover:not(:disabled) {
         background-color: var(--primary-50);
       }
       &:disabled {
         color: var(--disabled-600);
         border-color: var(--disabled-600);
+        cursor: not-allowed;
       }
       &:focus {
         outline: 3px solid var(--primary-200);
@@ -62,12 +80,13 @@
       color: var(--font);
       border-color: var(--neutral-500);
 
-      &:hover {
+      &:hover:not(:disabled) {
         background-color: var(--primary-50);
       }
       &:disabled {
         color: var(--disabled-600);
         border-color: var(--disabled-600);
+        cursor: not-allowed;
       }
       &:focus {
         outline: 3px solid var(--primary-200);
@@ -84,11 +103,12 @@
     &-primary {
       color: var(--primary-500);
       
-      &:hover {
+      &:hover:not(:disabled) {
         background-color: var(--primary-50);
       }
       &:disabled {
         color: var(--disabled-600);
+        cursor: not-allowed;
       }
       &:focus {
         outline: 3px solid var(--primary-200);
@@ -97,11 +117,12 @@
     &-neutral {
       color: var(--font);
 
-      &:hover {
+      &:hover:not(:disabled) {
         background-color: var(--primary-50);
       }
       &:disabled {
         color: var(--disabled-600);
+        cursor: not-allowed;
       }
       &:focus {
         outline: 3px solid var(--primary-200);
@@ -115,11 +136,12 @@
     background-color: transparent;
     padding: 0.125rem 0.25rem;
 
-    &:hover {
+    &:hover:not(:disabled) {
       color: var(--primary-550);
     }
     &:disabled {
       color: var(--neutral-500);
+      cursor: not-allowed;
     }
     &:focus {
       outline: 3px solid var(--primary-200);
@@ -129,5 +151,33 @@
       text-decoration: none;
     }
 
+  }
+
+  &.choice-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-components);
+    border-color: var(--neutral-600);
+    gap: 8px;
+    
+    &:hover:not(:disabled) {
+      background-color: var(--primary-50);
+    }
+
+    &:disabled {
+      color: var(--disabled-600);
+      border-color: var(--disabled-600);
+      cursor: not-allowed;
+    }
+
+    &:focus {
+      outline: 3px solid var(--primary-200);
+    }
+
+    &.selected:not(:disabled) {
+      color: var(--primary-500);
+      border-color: var(--primary-500);
+    }
   }
 }
