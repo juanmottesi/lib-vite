@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
-import { ChoiceChip } from './ChoiceChip';
+import { FilterChip } from './FilterChip';
 
 const meta = {
-  title: 'Components/ChoiceChip',
-  component: ChoiceChip,
+  title: 'Components/FilterChip',
+  component: FilterChip,
   parameters: {
     layout: 'centered',
     design: {
@@ -24,9 +24,11 @@ const meta = {
   args: {
     id: 'action',
     children: 'Default',
+    label: 'Default',
+    options: [{ name: 'Default' }, { name: 'Default2' }],
     onClick: fn(),
   },
-} satisfies Meta<typeof ChoiceChip>;
+} satisfies Meta<typeof FilterChip>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
