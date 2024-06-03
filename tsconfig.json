@@ -22,10 +22,4 @@
   },
   "include": ["lib", "test"],
   "references": [{ "path": "./tsconfig.node.json" }],
-  "exclude": [
-    "lib/**/*.stories.ts",
-    "lib/**/*.stories.tsx",
-    "lib/**/*.spec.ts",
-    "lib/**/*.spec.tsx"
-  ],
 }
