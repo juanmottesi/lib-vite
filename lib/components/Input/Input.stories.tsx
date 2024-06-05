@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Input } from './index';
+import { numericMask } from '../../utils/masks';
 
 const meta = {
   title: 'Components/Input',
@@ -18,6 +19,8 @@ const meta = {
     autoFocus: { control: 'boolean' },
     onClick: { action: 'clicked' },
     className: { control: 'text' },
+    prefix: { control: 'text' },
+    postfix: { control: 'text' },
   },
   args: {
     placeholder: 'Placeholder',
@@ -29,13 +32,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
-export const Prefix: Story = {
+export const NumericMask: Story = {
   args: {
-    prefix: 'AR$',
-  },
-};
-export const Postfix: Story = {
-  args: {
-    postfix: 'AR$',
+    mask: (value: string) => numericMask(value, { maxIntegers: 10, maxDecimals: 2, thousandsSeparator: '.', decimalSeparator: ',' }),
   },
 };

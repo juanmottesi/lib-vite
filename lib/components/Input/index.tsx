@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { SizingType } from '../../types/SizingType';
+import { FnMask } from '../../utils/masks';
 
 type InputProps = {
   size?: SizingType;
@@ -9,6 +10,7 @@ type InputProps = {
   inputMode?: 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search' | undefined;
   disabled?: boolean;
   error?: boolean;
+  mask?: FnMask;
 } & React.HTMLAttributes<HTMLInputElement>;
 
 export const Input = ({
@@ -20,6 +22,8 @@ export const Input = ({
   inputMode = 'text',
   disabled = false,
   error = false,
+  mask = undefined,
+  onChange,
   ...rest
 }: InputProps) => {
   return (
@@ -30,6 +34,16 @@ export const Input = ({
         placeholder={placeholder}
         inputMode={inputMode}
         className={`input font-body-${size} ${className}`}
+        onChange={(event) => {
+          if (mask) {
+            const value = event.target.value;
+            const maskedValue = mask(value);
+            const cursorPosition = (event.target.selectionEnd || 0) + (maskedValue.length - value.length);
+            event.target.value = maskedValue;
+            event.target.setSelectionRange(cursorPosition, cursorPosition);
+          }
+          onChange && onChange(event);
+        }}
         {...rest}
       />
       {postfix && <div className="input-postfix">{postfix}</div>}
