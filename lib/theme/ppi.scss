@@ -30,6 +30,13 @@
   --disabled-600: var(--neutral-600);
 
   background-color: var(--background);
+  
+  /* Components */
+
+  --pressable-hover: var(--primary-50);
+  --pressable-focus: var(--primary-200);
+  --pressable-neutral: var(--neutral-500);
+
 }
 
 .light {
