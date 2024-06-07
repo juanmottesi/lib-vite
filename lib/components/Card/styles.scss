@@ -1,0 +1,38 @@
+.card {
+  color: var(--font);
+  padding: 0.5rem;
+  border-radius: 8px;
+
+  &.plain {
+    background-color: var(--background-components);
+  }
+  &.neutral {
+    background-color: var(--neutral-150);
+  }
+  &.primary {
+    background-color: var(--primary-500);
+    color: var(--font-high-contrast);
+  }
+  &.outline-primary {
+    border: 1px solid var(--primary-500);
+    background-color: var(--background-components);
+  }
+  &.bordered-primary {
+    border: 1px solid var(--primary-500);
+    background-color: var(--background-components);
+
+    &.none, &.soft, &.hard {
+      box-shadow: 0 -7px 0 0 var(--primary-500);
+    }
+  }
+
+  &.none {
+    box-shadow: none;
+  }
+  &.soft {
+    box-shadow: 0 0 12px 0 color-mix(in srgb, var(--neutral-600) 14%, transparent);
+  }
+  &.hard {
+    box-shadow: 0 0 12px 0 color-mix(in srgb, var(--neutral-600) 30%, transparent);
+  }
+}

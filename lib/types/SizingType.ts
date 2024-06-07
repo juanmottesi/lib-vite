@@ -1,0 +1,1 @@
+export type SizingType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
