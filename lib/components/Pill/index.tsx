@@ -15,5 +15,5 @@ type PillProps = {
 } & React.HTMLAttributes<HTMLSpanElement>;
 
 export const Pill = ({ variant, className, ...rest }: PillProps ) => (
-  <span {...rest} className={`pill font-body-xs ${variant} ${className}`}  />
+  <span {...rest} className={`pill font-body-xs ${variant} ${className || ''}`} />
 );

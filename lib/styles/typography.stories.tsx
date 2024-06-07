@@ -13,7 +13,6 @@ const meta = {
       url: 'https://www.figma.com/file/XS6eYLoAUGg6QDWqdAeAAv/PeppinoDS-v2.7?type=design&node-id=1802-1659&mode=design&t=9QX0vhPCBpkBQgDQ-4',
     },
   },
-  tags: ['autodocs'],
   argTypes: {
     className: {
       options: [

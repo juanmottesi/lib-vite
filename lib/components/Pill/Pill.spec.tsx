@@ -1,16 +1,23 @@
-import { cleanup, render, screen } from "@testing-library/react";
-import { afterEach, describe, it } from "vitest";
-import { Pill } from "./index";
+import React from 'react';
+import { test, expect } from '@playwright/experimental-ct-react';
 
-describe('Card test:', () => {
-  afterEach(cleanup);
+import { checkIfContiansClass } from '../../../test/utils';
 
-  it('should render component', () => {
-    render(<Pill variant="default" />);
-  });
+import { Pill } from './index';
 
-  it('should render a children', () => {
-    render(<Pill variant="default">Hello world!</Pill>);
-    screen.getByText('Hello world!');
-  });
+test('Should render component', async ({ mount }) => {
+  const component = await mount(<Pill variant="default">Hola</Pill>);
+  await expect(component).toContainText('Hola');
+});
+
+test('Should contain className same as variant', async ({ mount }) => {
+  const component = await mount(<Pill variant="default">Hola</Pill>);
+  await checkIfContiansClass(component, 'pill');
+  await checkIfContiansClass(component, 'default');
+});
+
+test('Should contain className same as variant (active)', async ({ mount }) => {
+  const component = await mount(<Pill variant="active">Hola</Pill>);
+  await checkIfContiansClass(component, 'pill');
+  await checkIfContiansClass(component, 'active');
 });

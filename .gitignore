@@ -26,3 +26,11 @@ dist-ssr
 *storybook.log
 
 coverage/*
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

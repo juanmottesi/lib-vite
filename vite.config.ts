@@ -1,23 +1,13 @@
-import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vitest/config';
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
 import dts from 'vite-plugin-dts';
 
 import { glob } from 'glob';
+
 import { extname, relative, resolve } from 'path';
 import { fileURLToPath } from 'node:url';
 
 export default defineConfig({
-  test: {
-    environment: 'happy-dom',
-    coverage: {
-      exclude: [
-        'lib/**/*.stories.tsx',
-        '.storybook',
-        'lib/main.ts',
-        '.eslintrc.cjs',
-      ],
-    },
-  },
   plugins: [
     react(),
     dts({ include: ['lib'] }),
@@ -33,7 +23,7 @@ export default defineConfig({
       external: ['react', 'react/jsx-runtime'],
       input: Object.fromEntries(
         glob.sync(
-          ['lib/**/*.{ts,tsx}', 'lib/theme/*.css'],
+          'lib/**/*.{ts,tsx,css}',
           { ignore: ['lib/**/*.stories.{ts,tsx}', 'lib/**/*.spec.{ts,tsx}'] },
         ).map(file => [
           relative(
