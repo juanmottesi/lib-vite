@@ -1,4 +1,12 @@
 :root {
+  color-scheme: light dark;
+
+  --background: var(--neutral-150);
+  --background-components: var(--neutral-0);
+
+  --font: var(--neutral-950);
+  --font-high-contrast: var(--neutral-0);
+      
   --primary-50: #E8F3FF;
   --primary-100: #D1E8FF;
   --primary-200: #A3D1FF;
@@ -15,5 +23,9 @@
   --secondary-550: #0D113C;
   --secondary-800: #06081A;
 
-  --accent-500: #28B8D2
+  --accent-500: #28B8D2;
+
+  --disabled-150: var(--neutral-150);
+  --disabled-300: var(--neutral-300);
+  --disabled-600: var(--neutral-600);
 }

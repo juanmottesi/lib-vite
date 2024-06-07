@@ -1,0 +1,133 @@
+.pressable {
+  border: 1px solid;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &.xs,&.sm {
+    padding: 0.3125rem;
+  }
+  &.md {
+    padding: 0.4375rem;
+  }
+  &.lg {
+    padding: 0.6875rem;
+  }
+  &.xl {
+    padding: 0.9375rem;
+  }
+
+  &.fill {
+    & {
+      font-weight: 600;
+    }
+    &-primary {
+      background-color: var(--primary-500);
+      color: var(--font-high-contrast);
+      border-color: var(--primary-500);
+      
+      &:hover {
+        background-color: var(--primary-550);
+        border-color: var(--primary-550);
+      }
+      &:disabled {
+        background-color: var(--disabled-600);
+        border-color: var(--disabled-600);
+      }
+      &:focus {
+        outline: 3px solid var(--primary-200);
+      }
+    }
+  }
+  &.outline {
+    & {
+      background-color: transparent;
+      font-weight: 600;
+    }
+    &-primary {
+      color: var(--primary-500);
+      border-color: var(--primary-500);
+
+      &:hover {
+        background-color: var(--primary-50);
+      }
+      &:disabled {
+        color: var(--disabled-600);
+        border-color: var(--disabled-600);
+      }
+      &:focus {
+        outline: 3px solid var(--primary-200);
+      }
+    }
+    &-neutral {
+      color: var(--font);
+      border-color: var(--neutral-500);
+
+      &:hover {
+        background-color: var(--primary-50);
+      }
+      &:disabled {
+        color: var(--disabled-600);
+        border-color: var(--disabled-600);
+      }
+      &:focus {
+        outline: 3px solid var(--primary-200);
+      }
+    }
+  }
+  &.flat {
+    & {
+      background-color: transparent;
+      font-weight: 500;
+      border-color: transparent;
+    }
+
+    &-primary {
+      color: var(--primary-500);
+      
+      &:hover {
+        background-color: var(--primary-50);
+      }
+      &:disabled {
+        color: var(--disabled-600);
+      }
+      &:focus {
+        outline: 3px solid var(--primary-200);
+      }
+    }
+    &-neutral {
+      color: var(--font);
+
+      &:hover {
+        background-color: var(--primary-50);
+      }
+      &:disabled {
+        color: var(--disabled-600);
+      }
+      &:focus {
+        outline: 3px solid var(--primary-200);
+      }
+    }
+  }
+  &.link {
+    border: none;
+    text-decoration: underline;
+    color: var(--primary-500);
+    background-color: transparent;
+    padding: 0.125rem 0.25rem;
+
+    &:hover {
+      color: var(--primary-550);
+    }
+    &:disabled {
+      color: var(--neutral-500);
+    }
+    &:focus {
+      outline: 3px solid var(--primary-200);
+    }
+
+    &-plain {
+      text-decoration: none;
+    }
+
+  }
+}
