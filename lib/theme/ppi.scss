@@ -1,19 +1,19 @@
 :root {
   color-scheme: light dark;
+  
+  --background: light-dark(var(--neutral-150), #0F0F0F);
+  --background-components: light-dark(var(--neutral-0), #202020);
 
-  --background: var(--neutral-150);
-  --background-components: var(--neutral-0);
-
-  --font: var(--neutral-950);
+  --font: light-dark(var(--neutral-950), var(--neutral-150));
   --font-high-contrast: var(--neutral-0);
       
-  --primary-50: #E8F3FF;
-  --primary-100: #D1E8FF;
-  --primary-200: #A3D1FF;
-  --primary-400: #48A4FF;
-  --primary-500: #1A8DFF;
-  --primary-550: #177FE5;
-  --primary-800: #0A3866;
+  --primary-50: light-dark(#E8F3FF, #e5eff8);
+  --primary-100: light-dark(#D1E8FF, #ccdff1);
+  --primary-200: light-dark(#A3D1FF, #99bfe4);
+  --primary-400: light-dark(#48A4FF, #327ec9);
+  --primary-500: light-dark(#1A8DFF, #005fbc);
+  --primary-550: light-dark(#177FE5, #0055a9);
+  --primary-800: light-dark(#0A3866, #00264b);
 
   --secondary-50: #E6E7EC;
   --secondary-100: #CFD0D9;
@@ -29,9 +29,20 @@
   --disabled-300: var(--neutral-300);
   --disabled-600: var(--neutral-600);
 
+  background-color: var(--background);
+  
   /* Components */
 
   --pressable-hover: var(--primary-50);
   --pressable-focus: var(--primary-200);
   --pressable-neutral: var(--neutral-500);
+
+}
+
+.light {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
 }
