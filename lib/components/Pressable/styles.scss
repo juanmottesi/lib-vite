@@ -3,17 +3,40 @@
   border-radius: 4px;
   cursor: pointer;
 
+  &:hover:not(:disabled) {
+    background-color: var(--pressable-hover);
+  }
+  &:focus {
+    outline: 3px solid var(--pressable-focus);
+  }
+
   &.xs,&.sm {
-    padding: 0.3125rem;
+    padding: 0.125rem 0.3125rem;
+
+    &.choice-chip, &.filter-chip {
+      border-radius: 18px;
+    }
   }
   &.md {
-    padding: 0.4375rem;
+    padding: 0.3125rem 0.4375rem;
+
+    &.choice-chip, &.filter-chip {
+      border-radius: 18px;
+    }
   }
   &.lg {
-    padding: 0.6875rem;
+    padding: 0.5rem 0.6875rem;
+
+    &.choice-chip, &.filter-chip {
+      border-radius: 24px;
+    }
   }
   &.xl {
     padding: 0.9375rem;
+
+    &.choice-chip, &.filter-chip {
+      border-radius: 28px;
+    }
   }
 
   &.fill {
@@ -25,16 +48,14 @@
       color: var(--font-high-contrast);
       border-color: var(--primary-500);
       
-      &:hover {
-        background-color: var(--primary-550);
-        border-color: var(--primary-550);
+      &:hover:not(:disabled) {
+        background-color: color-mix(in srgb, var(--primary-500) 90%, #000);
+        border-color: color-mix(in srgb, var(--primary-500) 90%, #000);
       }
       &:disabled {
         background-color: var(--disabled-600);
         border-color: var(--disabled-600);
-      }
-      &:focus {
-        outline: 3px solid var(--primary-200);
+        cursor: not-allowed;
       }
     }
   }
@@ -47,30 +68,21 @@
       color: var(--primary-500);
       border-color: var(--primary-500);
 
-      &:hover {
-        background-color: var(--primary-50);
-      }
       &:disabled {
         color: var(--disabled-600);
         border-color: var(--disabled-600);
-      }
-      &:focus {
-        outline: 3px solid var(--primary-200);
+        cursor: not-allowed;
       }
     }
+
     &-neutral {
       color: var(--font);
-      border-color: var(--neutral-500);
+      border-color: var(--pressable-neutral);
 
-      &:hover {
-        background-color: var(--primary-50);
-      }
       &:disabled {
         color: var(--disabled-600);
         border-color: var(--disabled-600);
-      }
-      &:focus {
-        outline: 3px solid var(--primary-200);
+        cursor: not-allowed;
       }
     }
   }
@@ -84,27 +96,17 @@
     &-primary {
       color: var(--primary-500);
       
-      &:hover {
-        background-color: var(--primary-50);
-      }
       &:disabled {
         color: var(--disabled-600);
-      }
-      &:focus {
-        outline: 3px solid var(--primary-200);
+        cursor: not-allowed;
       }
     }
     &-neutral {
       color: var(--font);
 
-      &:hover {
-        background-color: var(--primary-50);
-      }
       &:disabled {
         color: var(--disabled-600);
-      }
-      &:focus {
-        outline: 3px solid var(--primary-200);
+        cursor: not-allowed;
       }
     }
   }
@@ -115,19 +117,39 @@
     background-color: transparent;
     padding: 0.125rem 0.25rem;
 
-    &:hover {
-      color: var(--primary-550);
+    &:hover:not(:disabled) {
+      color: color-mix(in srgb, var(--primary-500) 90%, #000);
+      background-color: transparent;
     }
     &:disabled {
-      color: var(--neutral-500);
+      color: var(--pressable-neutral);
+      cursor: not-allowed;
     }
-    &:focus {
-      outline: 3px solid var(--primary-200);
-    }
-
     &-plain {
       text-decoration: none;
     }
+  }
+  &.choice-chip, &.filter-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-components);
+    border-color: var(--pressable-neutral);
+    gap: 0.5rem;
 
+    &:disabled {
+      color: var(--disabled-600);
+      border-color: var(--disabled-600);
+      cursor: not-allowed;
+    }
+    &.selected:not(:disabled) {
+      color: var(--primary-500);
+      border-color: var(--primary-500);
+    }
+  }
+  &.filter-chip {
+    & .label {
+      color: var(--font);
+    }
   }
 }

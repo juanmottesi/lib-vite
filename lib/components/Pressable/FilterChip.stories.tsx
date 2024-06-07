@@ -1,21 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
-import { Button } from './Button';
+import { FilterChip } from './FilterChip';
 
 const meta = {
-  title: 'Components/Pressable/Button',
-  component: Button,
+  title: 'Components/Pressable/FilterChip',
+  component: FilterChip,
   parameters: {
     layout: 'centered',
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/design/XS6eYLoAUGg6QDWqdAeAAv/PeppinoDS-v2.7?node-id=2338-16244&t=3uIochYtdxkFJFi0-4',
+      url: 'https://www.figma.com/design/XS6eYLoAUGg6QDWqdAeAAv/PeppinoDS-v2.7?node-id=6002-29326&t=qWTCdT3IWPNKLpRB-4',
     },
   },
   tags: ['autodocs'],
   argTypes: {
-    variant: { control: 'select' },
     size: { control: 'select' },
     type: { control: 'select', options: ['button', 'submit', 'reset'] },
     disabled: { control: 'boolean' },
@@ -25,10 +24,11 @@ const meta = {
   args: {
     id: 'action',
     children: 'Default',
-    size: 'md',
+    label: 'Default',
+    options: [{ name: 'Default' }, { name: 'Default2' }],
     onClick: fn(),
   },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof FilterChip>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

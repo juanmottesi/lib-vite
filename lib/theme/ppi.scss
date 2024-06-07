@@ -28,4 +28,10 @@
   --disabled-150: var(--neutral-150);
   --disabled-300: var(--neutral-300);
   --disabled-600: var(--neutral-600);
+
+  /* Components */
+
+  --pressable-hover: var(--primary-50);
+  --pressable-focus: var(--primary-200);
+  --pressable-neutral: var(--neutral-500);
 }
